@@ -49,16 +49,9 @@ uv sync
 
 ### 第 3 步：启动调试版 Edge 并登录
 
-任选下面一种方式启动一个「带调试端口」的 Edge，然后在弹出的窗口里打开 `tieba.baidu.com` 登录，**保持窗口开着**。
+启动一个「带调试端口」的 Edge，然后在弹出的窗口里打开 `tieba.baidu.com` 登录，**保持窗口开着**。
 
-**方式 A：双击脚本（最简单）**
-
-- `start_edge.bat` —— 双击运行（cmd 环境）；
-- `start_edge.ps1` —— 右键「用 PowerShell 运行」。
-
-两个脚本做的是同一件事，只是面向不同的 shell，用哪个都行。脚本里的中文已按对应编码处理好，正常显示、不乱码。
-
-**方式 B：PowerShell 直接粘贴一条命令**
+**执行：PowerShell 直接粘贴一条命令**
 
 ```powershell
 & "C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe" --remote-debugging-port=9222 --user-data-dir="C:\selenium_edge_profile"
@@ -73,8 +66,7 @@ uv sync
 ### 第 4 步：拿到你的贴吧主页 URL
 
 1. 在刚登录的 Edge 里点自己的**头像**进入个人主页；
-2. 点顶部的**「回贴」**标签；
-3. 复制**地址栏的完整网址**。形如：
+2. 复制**地址栏的完整网址**。形如：
 
 ```
 https://tieba.baidu.com/home/main?id=填写你的贴吧ID&fr=personalize_page
@@ -214,9 +206,6 @@ UI 版的时间几乎全耗在「找元素 → 等元素出现 → 点按钮 →
 ---
 
 ## 常见问题
-
-**连不上浏览器（`DevToolsActivePort` 相关）？**
-用 `start_edge.bat` 启动，确认它弹出的 Edge 窗口还开着、已登录，且端口与 `DEBUG_ADDRESS` 都是 9222。
 
 **驱动报错 `SessionNotCreatedException`？**
 Edge 版本与驱动不匹配。按第 2 步手动下载对应版本的 `msedgedriver.exe` 放到项目目录再试。
