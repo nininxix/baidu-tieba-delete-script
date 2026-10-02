@@ -1,7 +1,0 @@
-.venv/
-__pycache__/
-*.pyc
-.python-version
-screenshots/
-stop.txt
-.idea/
